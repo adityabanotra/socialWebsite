@@ -1,0 +1,12 @@
+body
+{
+margin: 0px;
+
+background-color: aqua;
+}
+
+#forms{
+    display: flex;
+    flex-wrap: wrap;
+}
+

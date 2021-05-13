@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=title%> </title>
+    <link rel="stylesheet" href="loginst.css">
+
+    <style>
+body
+{
+margin: 0px;
+
+background-color: rgb(191, 255, 255);
+}
+
+#forms{
+    margin: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+input{
+    margin-bottom: 30px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+
+    <div id="forms">
+    <div id="login">
+        <h1>
+            Login
+        </h1>
+    <form action="/users/create-session" method="POST">
+        <input type="email" name="email" placeholder="email"> <br>
+        <input type="password" name="password" placeholder="password">  <br>
+        <button type="submit">Log In</button>   
+        </form>
+    </div>
+
+    <div id="Signup">
+        <h1>
+            Signup
+        </h1>
+        <form action="/users/create" method="POST">
+            <input type="text" name="name" placeholder="Full Name"><br>
+            <input type="email" name="email" placeholder="email"><br>
+            <input type="password" name="password" placeholder="password">  <br>
+            <input type="password" name="cpassword" placeholder="confirm password">  <br>
+            <button type="submit">Sign Up</button>   
+            </form>
+        </div>
+
+    </div>
+        
+</body>
+</html>
