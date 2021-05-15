@@ -12,10 +12,25 @@
     <section id="feedpost">
         <h3>POST</h3>
         
-        <form action="" id="newpost" method="POST">
+        <form action="/posts/create" id="newpost" method="POST">
             <textarea name="content" id="newpostcontent" cols="30" rows="3"></textarea>
             <input type="submit" value="Post">
         </form>
+
+        <div id="post-container">
+            <ul>
+                <% for(post of posts) { %>
+                    <li>
+                        <%= post.content%> <br>
+                        <%= post.user.name%>
+                        <br><br>
+
+                    </li>
+
+                    <%}%>
+            </ul>
+
+        </div>
 
     </section>
 </body>

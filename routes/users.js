@@ -6,6 +6,8 @@ const usersController = require('../controllers/users_controller');
 router.get('/profile' , passport.checkAuthentication,usersController.profile);
 
 router.get('/login',usersController.login);
+router.get('/signout',usersController.destroySession);
+
 //use pasport as a middleware 
 router.post('/create',usersController.create);
 
