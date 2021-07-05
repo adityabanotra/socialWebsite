@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
 </head>
-<body>
-    <h1>NAME : <%=user.name%></h1>
-    <h1>Email : <%=user.email%></h1>
 
-    <a href="/users/signout"> Sign out </a>
+<style>
+    #dp{
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+   <img src="<%=profile_user.avatar%>" alt="<%=profile_user.name%>" id="dp" >
+
+
+    <h1>NAME : <%=profile_user.name%></h1>
+    <h1>Email : <%=profile_user.email%></h1>
+     
+      <%  if(locals.user && locals.user.id==profile_user.id){ %>
+
+        <form action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data" method="POST">
+            <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required>
+            <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
+            <input type="file" name="avatar" placeholder="Profile-Picture">
+            <input type="submit" value="update">
+        </form>
+        <a href="/users/signout"> Sign out </a>
+
+    <%} else {%>
+    
+
+    <%}%>
+
+    
 </body>
 </html>
+
+
+
+
